@@ -1,0 +1,586 @@
+\documentclass[a4paper,norsk,12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[norsk]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{bm}
+
+
+
+\title{\vspace{-4.0cm} \textbf{Obligatorisk innlevering 1, FYS1120-Elektromagnetisme}}
+\author{Av: Laila Andersland}
+
+\begin{document}
+\maketitle
+
+\textbf{Oppgave 1 \hspace{3mm}  Gradient, divergens og virvling} \\
+
+\textbf{a)} \hspace{3mm}  { Finn gradienten} \\
+
+$(i)$ \hspace{3mm} $f(x,y,z) = x^{2} y$ \\
+
+\textbf{Svar:}
+
+{Gradienten til skalarfeltet, \textit{f}, er et vektorfelt som peker i retningen til den} 
+
+{største økningen av skalarfeltet. Gradienten finnes ved å bruke:}
+
+\begin{equation}
+\bigtriangledown f = ( \frac{\partial f}{\partial x} , \frac{\partial f}{\partial y} , \frac{\partial f}{\partial z} )
+\end{equation}
+
+slik at
+$$
+\bigtriangledown f = ( \frac{\partial x^{2}y}{\partial x} , \frac{\partial x^2 y}{\partial y} , \frac{\partial x^2 y}{\partial z} ) 
+=
+\def\doubleunderline#1{\underline{\underline{#1}}}
+ (2xy , x^2 , 0) = \doubleunderline{(2xy,x^2)}
+$$\\
+
+$(ii)$ \hspace{3mm} $g(x,y,z) = x y z $ \
+
+\textbf{Svar:}
+
+Bruker (1) og gjør det samme:
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\bigtriangledown f  = \doubleunderline{(yz, xz, xy)}
+$$ \\
+
+
+$(iii)$ \hspace{3mm} $h(r,\theta ,\phi) = \frac{1}{r} e^{r^2} , r = \sqrt{x^2 + y^2 + z^2} $ \
+
+\textbf{Svar:}
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\bigtriangledown h  = \doubleunderline{(- \frac{1}{r^2} e^{r^2} + \frac{1}{r} e^{r^2} ) \hat{e}_r}
+$$ \\
+
+
+
+(fyll inn utregningen her)\\
+
+\textbf{b)} { Finn divergensen og virvlingen} \\
+
+$(i)$ \hspace{3mm} $\textbf{u}(x,y,z) = (2xy, x^2, 0) $ \\
+
+\textbf{Svar:}
+
+Divergensen til vektorfeltene gir størrelsen til en kilde eller sluk i et gitt 
+
+punkt i vektorfeltet, i form av en skalar. Divergensen finnes ved å regne 
+
+ut:
+
+$$
+\bigtriangledown \cdot \textbf{u} = \frac{\partial}{\partial x} u_x + \frac{\partial}{\partial y} u_y + \frac{\partial}{\partial z} u_z \
+$$ 
+
+Setter så inn:
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\bigtriangledown \cdot \textbf{u} = \frac{\partial}{\partial x} 2xy + \frac{\partial}{\partial y} x^2 + \frac{\partial}{\partial z} 0 \
+= 2y + 0 + 0 = \doubleunderline{ 2y} \
+$$ \\
+
+Virvlingen(curl)beskriver den infinitesimale rotasjonen av et vektorfelt, 
+
+hvor lengden og retningen beskriver rotasjonen i et gitt punkt i feltet. 
+
+Virvlingen finnes ved å regne ut:
+
+$$
+\bigtriangledown \times \textbf{u} = 
+$$
+
+$$
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+u_x & u_y & u_z
+\end{vmatrix}
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+2xy & x^2 & 0
+\end{vmatrix}
+$$
+
+$$
+= \left( \frac{\partial}{\partial y} (0) - \frac{\partial}{\partial z} (x^2) \right) \hat i + \left(\frac{\partial}{\partial z} (2xy) - \frac{\partial}{\partial x} (0) \right) \hat j + \left(\frac{\partial}{\partial x} (x^2) - \frac{\partial}{\partial y} (2xy) \right) \hat j
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\left(0 - 0 \right) \hat i + \left(0 - 0 \right) \hat j + \left(2x - 2x \right) \hat k = \doubleunderline{\vec{0}}
+$$\\
+
+
+
+$(ii)$ \hspace{3mm} $\textbf{v}(x,y,z) = (e^{yz}, ln(xy), z) $ \\
+
+\textbf{Svar:}
+
+Divergensen er:
+
+
+$$
+\bigtriangledown \cdot \textbf{v} = \frac{\partial}{\partial x} v_x + \frac{\partial}{\partial y} v_y + \frac{\partial}{\partial z} v_z \  = \frac{\partial}{\partial x} (e^{yz})+ \frac{\partial}{\partial y} ln(xy) + \frac{\partial}{\partial z} z \
+$$ 
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 + \frac{1}{y} + 1 =  \frac{1}{y} + 1 = \doubleunderline{ \frac{1}{y} (y+1)} \
+$$ \\
+
+Og virvlingen blir:
+
+$$
+\bigtriangledown \times \textbf{v} 
+= \left( \frac{\partial}{\partial y} (z) - \frac{\partial}{\partial z} \Big(ln(xy)\Big) \right) \hat i + \left(\frac{\partial}{\partial z} (e^{yz}) - \frac{\partial}{\partial x} (z) \right) \hat j + \left(\frac{\partial}{\partial x} \Big(ln(xy)\Big) - \frac{\partial}{\partial y} (e^{yz}) \right) \hat k
+$$
+
+$$
+=\left(0 - 0 \right) \hat i + \left(ye^{yz} - 0 \right) \hat j + \left(\frac{1}{xy} - ze^{yz} \right) \hat k 
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 \hat i + ye^{yz} \hat j + \left( \frac{1}{xy} - ze^{yz} \right)\hat{k} = \doubleunderline{ ye^{yz} \hat j + \left( xy^{-1} - ze^{yz} \right)\hat{k} }
+$$\\
+
+$(iii)$ \hspace{3mm} $\textbf{w}(x,y,z) = (yz, xz, xy) $ \\
+
+\textbf{Svar:}
+Divergensen:\
+
+$$
+\bigtriangledown \cdot \textbf{w} = \frac{\partial}{\partial x} w_x + \frac{\partial}{\partial y} w_y + \frac{\partial}{\partial z} w_z \  = \frac{\partial}{\partial x} (yz)+ \frac{\partial}{\partial y} (xz) + \frac{\partial}{\partial z} (xy) \
+$$ 
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 + 0 + 0 =   \doubleunderline{ 0} \
+$$ \
+
+Og virvlingen blir:
+
+$$
+\bigtriangledown \times \textbf{w} 
+= \left( \frac{\partial}{\partial y} (xy) - \frac{\partial}{\partial z} (xz) \right) \hat i + \left(\frac{\partial}{\partial z} (yz) - \frac{\partial}{\partial x} (xy) \right) \hat j + \left(\frac{\partial}{\partial x} xz - \frac{\partial}{\partial y} (yz) \right) \hat k
+$$
+
+$$
+=\left(x - x \right) \hat i + \left(y - y \right) \hat j + \left({z} - z \right) \hat k 
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 \hat i + 0 \hat j + 0\hat{k} = \doubleunderline{ \vec{0} } 
+$$
+
+
+
+$(iv)$ \hspace{3mm} $\textbf{a}(x,y,z) = (y^2 z, -z^2 sin{y} + 2xyz, 2z cos{y} + y^2 x) $ \\
+
+\textbf{Svar:}
+
+Divergensen:\
+
+$$
+\bigtriangledown \cdot \textbf{a} = \frac{\partial}{\partial x} a_x + \frac{\partial}{\partial y} a_y + \frac{\partial}{\partial z} a_z \  = \frac{\partial}{\partial x} (y^2z)+ \frac{\partial}{\partial y} (-z^2 siny + 2xyz) + \frac{\partial}{\partial z} (2zcosy + y^2x) \
+$$ 
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 - z^2cosy + 2xz + 2cosy =   \doubleunderline{ 2xz + cosy(2-z^2)} \
+$$ \
+
+Og virvlingen blir:
+
+$$
+\bigtriangledown \times \textbf{a} 
+= \left( \frac{\partial}{\partial y} (2zcosy + y^2x) - \frac{\partial}{\partial z} (-z^2 siny + 2xyz) \right) \hat i 
+$$
+$$
++ \left(\frac{\partial}{\partial z} (y^2z) - \frac{\partial}{\partial x} (2zcosy + y^2x) \right) \hat j + \left(\frac{\partial}{\partial x} (-z^2 siny + 2xyz) - \frac{\partial}{\partial y} (y^2z) \right) \hat k
+$$
+
+$$
+=\left((-2zsiny + 2yx) - (-2zsiny+2xy) \right) \hat i + \left(y^2 - y^2 \right) \hat j + \left(2yz -2yz \right) \hat k 
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 \hat i + 0 \hat j + 0\hat{k} = \doubleunderline{ \vec{0} } 
+$$
+
+\textbf{c)} \\
+
+\textbf{Svar:}
+
+At et felt er \textit{konservativt}, betyr at feltet er virvlingsfritt, altså at 
+
+
+\begin{equation}
+\bigtriangledown \times \textbf{a} = \vec{0}
+\end{equation}
+
+Dette betyr at feltet kan representeres som gradienten av et potensialfelt:
+
+\begin{equation}
+\textbf{a} = - \bigtriangledown V 
+\end{equation}
+
+hvor V kalles potensialet. \\
+
+
+At et gravitasjonsfelt er konservativt betyr at integralet av en kurve i 
+
+dette feltet, kun er avhengig av endepunktene. Vi kan da si at
+
+gravitasjonsfeltet, \textbf{g}, er vei-uavhengig.\\
+
+I oppgave \textbf{b)} er \textbf{u}, \textbf{w} og \textbf{a} virvlingsfrie og dermed konservative felt, 
+
+hvor da f er potensialet til \textbf{u}, g er potensialet til \textbf{w} og h er potensialet 
+
+til \textbf{a}.\\
+
+
+\textbf{d)} \hspace{3mm}  Bruk laplaceoperatoren på disse skalarfeltene:\\
+
+$(i) j(x,y,z) = x^2 + xy + yz^2$ 
+
+\textbf{Svar:}\\
+$$
+\bigtriangledown^2 j = \bigtriangledown \cdot (\bigtriangledown j )
+$$
+
+$$
+(\bigtriangledown \cdot j) = (2x + y, x + z^2, 2yz)
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\doubleunderline{\bigtriangledown ( \bigtriangledown \cdot j) }= 2 + 0 + 2 =  \doubleunderline{4}
+$$\\
+
+
+$(ii)$ \hspace{3mm} $h(r,\theta ,\phi) = \frac{1}{r} e^{r^2}  $ \
+
+\textbf{Svar:}
+Fra oppgave \textbf{a} har vi at:
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\bigtriangledown h  = \doubleunderline{(- \frac{1}{r^2} e^{r^2} + \frac{1}{r} e^{r^2} ) \hat e_r}
+$$ \\
+
+$$
+\bigtriangledown \cdot \bigtriangledown h = \frac{1}{r^2} \frac{\partial}{\partial r} (r^2 (- \frac{e^{r^2}}{r^2} + 2 e^{r^2}))
+$$
+
+$$
+= \frac{1}{r^2} \frac{\partial}{\partial r} (-e^{r^2} +2 r^2 e^2) = \frac{1}{r^2} (-2re^{r^2} + 4 r e^{r^2} + 2r^2 2re^{r^2})
+$$
+
+$$
+=\frac{1}{r^2} (2re^{r^2} + 4r^3 e^{r^2}) = \frac{2 e^{r^2}}{r} + 4re^{r^2}
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+=\doubleunderline{(\frac{1}{r} + 2r)2e^{r^2}}
+$$\\
+
+
+\textbf{Oppgave 2} \hspace{3mm}  Vektoridentiteter \\
+
+vis følgende identitet:
+
+$ \textbf{a} \times (\textbf{b} \times \textbf{c} ) = \textbf{b}(\textbf{a} \cdot \textbf{c} - \textbf{c}(\textbf{a} \times \textbf{b}) $\\
+
+\textbf{Svar:}
+
+Begynner med ($ \textbf{b} \times \textbf{c} $):
+
+$$  
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+{b_1} & {b_2} & {b_3} \\
+{c_1} & {c_2} & {c_3}
+\end{vmatrix}
+= (b_2 c_3 - b_3 c_2) \hat i + (b_3 c_1 - b_1 c_3)\hat j + (b_1 c_2 - b_2 c_1) \hat k
+$$
+
+Tar så kryssproduktet av dette med \textbf{a}:
+
+$$  
+\textbf{a} \times (\textbf{b} \times \textbf{c} ) 
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+{a_1} & {a_2} & {a_3} \\
+(b_2 c_3 - b_3 c_2) & (b_3 c_1 - b_1 c_3) & (b_1 c_2 - b_2 c_1)
+\end{vmatrix}
+$$\\
+$$
+=\Big(a_2((b_1 c_2 - b_2 c_1) - a_3(b_3 c_1 - b_1 c_3)  \Big) \hat i 
+$$
+$$
++ \Big(a_3((b_2 c_3 - b_3 c_2) - a_1(b_1 c_2 - b_2 c_1)  \Big) \hat j
+$$
+$$
++ \Big(a_1((b_1 c_2 - b_2 c_1) - a_2(b_2 c_3 - b_3 c_2)  \Big) \hat k
+$$
+
+Legger så til (\textbf{a} \textbf{b} \textbf{c} - \textbf{a} \textbf{b} \textbf{c}):
+
+$$
+=\Big(a_2 b_1 c_2 - a_2 b_2 c_1 - a_3 b_3 c_1 - a_3 b_1 c_3 + \underline{a_1 b_1 c_1 - a_1 b_1 c_1}  \Big) \hat i 
+$$
+$$
++\Big(a_3 b_2 c_3 - a_3 b_3 c_2 - a_1 b_1 c_2 - a_1 b_2 c_1 + \underline{a_2 b_2 c_2 - a_2 b_2 c_2}  \Big) \hat j 
+$$
+$$
++\Big(a_1 b_1 c_2 - a_1 b_2 c_1 - a_2 b_2 c_3 - a_2 b_3 c_2 + \underline{a_3 b_3 c_3 - a_3 b_3 c_3}  \Big) \hat k 
+$$
+
+Samler så for \textbf{b} og \textbf{c}:
+
+$$
+= \Big( b_1 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) - c_1 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) \Big) \hat i
+$$
+$$
+= \Big( b_2 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) - c_2 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) \Big) \hat j
+$$
+$$
+= \Big( b_3 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) - c_3 \Big(a_1 c_1 + a_2 c_2 + a_3 c_3 \Big) \Big) \hat k
+$$
+
+
+$$
+= \textbf{b} (\textbf{a} \cdot \textbf{c}) - \textbf{c} (\textbf{a} \cdot \textbf{b})
+$$
+
+\hspace{110mm}$\blacksquare$
+
+
+
+\textbf{Oppgave 3} \hspace{3mm} Fluks og Gauss' teori
+
+\textbf{a)} 
+
+$$ \textbf{v}(x,y,z) = (y, x, z-x) $$
+
+Regn ut fluksen av feltet ut av enhetskuben, som er gitt ved $ x,y,z \in [0,1].$\\
+
+\textbf{Svar}: 
+
+
+\hspace{25mm}\fbox{\includegraphics[natwidth=324bp,natheight=454bp, width=140bp]{Enhetskube1.png}}
+
+\hspace{40mm}\textit{Figur 1}\\
+
+Figur 1 illustrerer enhetskuben, med nummererte flater, gir:
+
+\begin{table}[h!]
+  \centering
+
+  \label{tab:table1}
+  \begin{tabular}{c|c|c|c|c|c}
+    flate & flatefunkjon & $ \textbf{n} $ & d $\sigma$ & $\textbf{v} \times \textbf{n}$\\
+    \hline
+    1 & y=0 & $ -\hat j $ & dx dz & -x \\
+    \hline
+    2 & x=0 & $ -\hat i $ & dy dz & -y \\
+    \hline
+    3 & z=1 & $ \hat k $ & dx dy & 1-x \\
+    \hline
+    4 & y=1 & $ \hat j $ & dx dz & x \\
+    \hline
+    5 & x=1 & $ \hat i $ & dy dz & y \\
+    \hline
+    5 & z=0 & $ -\hat k $ & dx dy & x 
+  \end{tabular}
+\end{table}
+
+Sirkulasjonen blir da:
+
+$$ 
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\doubleunderline{Q} = \int_A \textbf{v} \cdot \textbf{n} = \int_0^1 \int_0^1 (1-x) + x dx dy = \int_0^1 \int_0^1 dx dy =  \doubleunderline{1} 
+$$\\
+
+
+\textbf{b)} Bruk Gauss' teorem til å regne ut fluksen.\\
+
+\textbf{Svar:}
+
+Gauss' teorem:
+
+$$
+Q  = \int_A \textbf{v} \cdot \textbf{n} = \int_V \nabla \cdot \textbf{v} d \hat i 
+$$
+
+Hvor:
+
+$$ \textbf{v}(x,y,z) = (y, x, z-x) $$
+
+Og
+
+$$
+\nabla \cdot \textbf{v} = \frac{\partial}{\partial x} (y)+ \frac{\partial}{\partial y} (x) + \frac{\partial}{\partial z} (z-x) = 1
+$$
+
+Får da at:
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\doubleunderline{Q}  = \int_V \nabla \cdot \textbf{v} d \hat i = \int \int_0^1 dx dy dz = \doubleunderline{1}
+$$\\
+
+Som stemmer med \textbf{a)}.\\
+
+\textbf{Oppgave 4} \hspace{3mm} Linjeintegral og Stokes' teorem\\
+
+$$ \textbf{w} (x,y,z) = (2x - y) \hat i -y^2 \hat j - y^2 z \hat k $$
+\\
+\textbf{a)} Regn ut divergensen til \textbf{w}
+\\
+
+\textbf{Svar:}
+
+$$
+\nabla \cdot \textbf{w} = \frac{\partial}{\partial x} (2x-y) + \frac{\partial}{\partial y} (-y^2)+ \frac{\partial}{\partial z} (-y^2 z) \ 
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= \doubleunderline{2 - 2y - y^2}
+$$
+
+\textbf{b)} Regn ut virvlingen til \textbf{w}
+
+
+$$
+\nabla \times \textbf{w}
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+(2x-y) & (-y^2) & (-y^2 k)
+\end{vmatrix}
+= (-2 y k - 0) \hat i + (0 - 0) \hat j + (0+1) \hat k
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= \doubleunderline{-2yz \hat i + \hat k}
+$$ \\
+
+\textbf{c)} Parametrisér kurven {$\Gamma$} som en vektor \bm{$\Gamma$} (\textit{t}), og finn d \bm{$\Gamma$} uttrykt 
+
+\hspace{4mm} ved d{\textit{t}}\\
+
+\textbf{Svar:} \\
+
+$$
+x = cos(t)
+$$
+$$
+y = sin(t)
+$$
+$$
+z = 1
+$$
+
+$$\bm{\Gamma} (\bm{x})= x \hat i + y \hat j + \hat k $$
+
+$$\bm{\Gamma} ({t}) = cos t \hat i + sin t \hat j + \hat k $$
+
+$$ \dfrac{\bm{\Gamma} ({t})}{dt} = -sin t \hat i + cos t \hat j $$
+
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\doubleunderline{d \bm{\Gamma}   = -sin t \hat i + cos t \hat j dt}
+$$\\
+
+\textbf{d)} Regn ut sirkulasjonen \textit{C}, til \textbf{w} rundt $\Gamma$.\\
+
+$$
+\textbf{w} (\bm{\Gamma}) =  (2 cos t - sin t) \hat i - sin^2 t \hat j - sin^2 t \hat k
+$$
+
+Sirkulasjonen er 
+
+$$ C = \oint \textbf{w} \cdot d {\bm{\Gamma} } $$
+
+Begynner først med ($\bm{w} \cdot d {\bm{\Gamma} }$):
+
+$$
+\bm{w} \cdot d {\bm{\Gamma} } = \Big( (2 cos t - sin t) ) \hat i - sin^2 t \hat j - sin^2 t \hat k \Big) \Big( -sin t \hat i + cos t \hat j + 0 \hat k \Big) dt
+$$
+
+$$
+= (-2cos t sin t + sin^2 t cos t + sin^2 t ) dt 
+$$
+
+$$
+C = \int_0^{2 0pi}  (-2cos t sin t + sin^2 t cos t + sin^2 t ) dt
+$$
+
+Deler opp og regner først ut
+
+$$
+-2 \int (cos t sin t ) dt + \int (sin^2 cos t) dt + \int sin^2 t dt
+$$
+
+
+$$\Big[cos^2 t + \dfrac{1}{3} sin^2 t + \dfrac{1}{2} (t - sin t cos t) \Big]_0^{2 \pi} = [cos^2 2\pi + \dfrac{1}{3} sin^3 2\pi + \dfrac{1}{2} ({2 \pi} - sin {2 \pi} cos {2 \pi})] 
+$$
+
+$$
+-[cos^2 0 + \dfrac{1}{3} sin^3 0 + \dfrac{1}{2} ({0} - sin {0} cos {0})] 
+$$
+
+$$ = [1+0 + \pi] - [1 + 0 + 0] = \pi $$\\
+
+
+\def\doubleunderline#1{\underline{\underline{#1}}} 
+Sirkulasjonen er dermed \doubleunderline{C = $\pi$}
+\\
+
+\textbf{e)} Bruk Stokes' teorem til å finne sirkulasjonen:\\
+
+\textbf{Svar:}
+
+Stokes' teorem:
+
+$$
+\int_\gamma \textbf{w} \cdot d \Gamma = \int_A \nabla \times \textbf{w} \cdot d \sigma
+$$
+
+
+Har virvlingen fra \textbf{b}):
+
+$$\nabla \times \textbf{w} = {-2yz \hat i + \hat k}$$
+
+Og at enhetsnormalvektoren går i positiv $\hat k $ retning.
+
+Har da at:
+
+$$
+C = \int_0^1 \int_0^{2 \pi} \nabla \times \textbf{w} \times \textbf{n} r d \theta dr = \int_0^{2 \pi} \int_0^1 r dr d \theta
+$$
+
+$$
+2 \pi \int_0^1 r dr = \dfrac{1}{2} 2 \pi = \doubleunderline{\pi}
+$$
+
+
+
+\end{document}
