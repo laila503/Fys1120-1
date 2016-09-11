@@ -1,0 +1,243 @@
+\documentclass[a4paper,norsk,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[norsk]{babel}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{pstricks}
+\usepackage{subfigure}
+\usepackage{booktabs}       % Pakke for pene tabeller
+                            % http://ctan.uib.no/macros/latex/contrib/booktabs/booktabs.pdf
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!70,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+    } 
+
+\date{11.09.2016}
+\title{FYS1120 Oblig 1}
+\author{Daniel Heinesen, daniehei}
+
+\begin{document}
+\maketitle
+\newpage
+
+\textbf{Oppgave 1:}
+
+\textbf{a)}\\
+
+Når jeg skal regne ut gradienten i oppgavene under bruker jeg at 
+
+\begin{equation}
+\nabla f =  \frac{\partial f}{\partial x}\hat{i} + \frac{\partial f}{\partial y}\hat{j} + \frac{\partial f}{\partial z}\hat{k}
+\end{equation}
+
+$i)$\\
+
+$$
+\nabla f=\nabla(x^{2}y) = 2xy\hat{i} + x^{2}\hat{j}
+$$
+
+$ii)$\\
+
+$$
+\nabla g=\nabla(xyz) = yz\hat{i} + xz\hat{j} + xy\hat{k}
+$$
+
+$iii)$\\
+
+ 
+
+$$
+\nabla h=\nabla(\frac{1}{r} e^{r^{2}}) = \frac{\partial f}{\partial r} \hat{e_r}
+$$
+
+Vi bruker produktregelen for derivasjon:
+
+$$
+= (2e^{r^{2}} - \frac{1}{r^{2}}e^{r^{2}})\hat{e_r}
+$$
+
+\textbf{b)}
+
+Her bruker jeg at divergensen og virvlingen er
+\begin{equation}
+\nabla \cdot \textbf{u} = \frac{\partial}{\partial x} u_x + \frac{\partial}{\partial y} u_y + \frac{\partial}{\partial z} U_z
+\end{equation}
+og
+\begin{equation}
+\nabla\times\textbf{u}
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+u_x & u_y & u_z
+\end{vmatrix}
+\end{equation}
+
+$i)$\\
+$$
+\nabla \cdot \textbf{u} = \nabla \cdot (2xy,x^{2},0) = 2x + 0 + 0 = 2x
+$$
+
+$$
+\nabla\times \textbf{u} = \nabla \times(2xy,x^{2},0) = \hat{k}(2x-2x) = 0
+$$
+
+$ii)$\\
+
+$$
+\nabla \cdot \textbf{v} = \nabla \cdot (e^{yz},ln(xy),z) = 0 + x\frac{1}{xy} + 1 = 1 + \frac{1}{y}
+$$
+
+$$
+\nabla\times \textbf{v} = \nabla \times(e^{yz},ln(xy),z) 
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+e^{yz} & ln(xy) & z
+\end{vmatrix}
+=\hat{j}(ye^{yz}) + \hat{k}(\frac{1}{x} - ze^{yz})
+$$
+
+$iii)$\\
+
+$$
+\nabla\cdot \textbf{w} = \nabla \cdot (yz,xz,xy) = 0 + 0 + 0 = 0
+$$
+
+$$
+\nabla \times \textbf{w} = \nabla \times (yz,xz,xy) 
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+yz & xz & xy
+\end{vmatrix}
+=\left(x - x \right) \hat i + \left(y - y \right) \hat j + \left({z} - z \right) \hat k = 0
+$$
+
+$iv)$\\
+
+$$
+\nabla \cdot \textbf{a} = \nabla \cdot (y^{2}z,-z^{2}\sin(y) + 2xyz, 2z\cos(y) + y^{2}x)
+$$
+$$
+= 0 -z^{2}\cos(y) + 2xz + 2\cos(y)
+$$
+
+$$
+\nabla \times \textbf{a} = \nabla \times  (y^{2}z,-z^{2}\sin(y) + 2xyz, 2z\cos(y) + y^{2}x)
+$$
+$$
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+y^{2}z & -z^{2}\sin(y) + 2xyz & 2z\cos(y) + y^{2}x
+\end{vmatrix}
+$$
+
+$$
+=\left((-2zsiny + 2yx) - (-2zsiny+2xy) \right) \hat i + \left(y^2 - y^2 \right) \hat j + \left(2yz -2yz \right) \hat k 
+$$
+
+$$
+\def\doubleunderline#1{\underline{\underline{#1}}}
+= 0 \hat i + 0 \hat j + 0\hat{k} = 0
+$$
+
+\textbf{C)}
+
+Matematisk sett vil $\nabla\times \textbf{v} = 0$ si at feltet er konservativt. Strømningen over en lukket kurve er null, strømning er uavhengig av vei og feltet kan skrives som $\textbf{v} = \nabla f$, hvor $f$ kalles en potens.\\
+
+Gravitasjon er konservativt fordi arbeid er uavhengig av tid og strekning; m.a.o bare avhengig av tilbakelagt avstand(høyde). Dette betyr også at mekanisk energi er bevart.\\
+
+I \textbf{b)} er $i)$, $iii)$ og $iv)$ konservative. $i)$ i \textbf{a)} er potensen til $i)$ i \textbf{b)}.
+
+\textbf{d)}
+
+Her bruker jeg at
+
+\begin{equation}
+\nabla ^{2}f = \nabla \cdot \nabla f 
+\end{equation}
+
+$i)$\\
+
+$$
+(\nabla j) = (2x + y)\hat{i} + (x + z^2)\hat{j} + 2yz\hat{k}
+$$
+
+$$
+\nabla \cdot(\nabla j) = 2 + 0 + 2y = 2 + 2y
+$$
+
+$ii)$\\
+
+Vi har fra \textbf{a)} $iii)$ at
+
+$$
+\nabla h = (2e^{r^{2}} - \frac{1}{r^{2}}e^{r^{2}})\hat{e_r}
+$$
+
+Så bruker vi at
+
+$$
+(\nabla \cdot \nabla h)_r = \frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{r} \nabla h_r) = \frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{r} (2e^{r^{2}} - \frac{1}{r^{2}}e^{r^{2}}))
+$$
+
+$$
+= \frac{1}{r^{2}}[2r(2r^{2} - 1)e^{r^{2}} + 4re^{r^{2}}] = \frac{e^{r^{2}}}{r}(4r^{2} + 2)
+$$
+
+
+\textbf{Oppgave 2)}
+
+Her skal jeg bevise for $\textbf{a} \times (\textbf{b} \times \textbf{c} ) = \textbf{b}(\textbf{a} \cdot \textbf{c} - \textbf{c}(\textbf{a} \times \textbf{b}) $ for en tilfeldig i-komponenten. Det tilsvarende vil være likt for de to andre komponentene også.
+
+$$
+[\textbf{a} \times (\textbf{b} \times \textbf{c} )]_i 
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+{a_i} & {a_j} & {a_k} \\
+(b_j c_k - b_k c_j) & (b_k c_i - b_i c_k) & (b_i c_j - b_j c_i)
+\end{vmatrix} _i
+$$
+
+$$
+= (a_j(b_i c_j - b_j c_i) - a_k(b_k c_i - b_i c_k))
+$$
+
+Så legger vi til $a_ib_ic_i - a_ib_ic_i $
+
+$$
+= (a_j(b_i c_j - b_j c_i) - a_k(b_k c_i - b_i c_k) + a_ib_ic_i - a_ib_ic_i)
+$$
+$$
+= (b_i(a_ic_i +a_jc_j + a_kc_k) - c_i(a_ib_i + a_jb_j + a_kb_k))
+$$
+$$
+= [\textbf{b}(\textbf{a} \cdot \textbf{c} - \textbf{c}(\textbf{a} \times \textbf{b})]_i
+$$
+
+Det tilsvarende gjøres for de andre 2 kompnentene(er helt likt, så jeg tar bare for én komponent for ikke å trenge å skrive så mye)
+
+
+
+
+
+
+
+
+\end{document}
