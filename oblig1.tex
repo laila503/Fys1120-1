@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{pstricks}
 \usepackage{subfigure}
+\usepackage{bm}
 \usepackage{booktabs}       % Pakke for pene tabeller
                             % http://ctan.uib.no/macros/latex/contrib/booktabs/booktabs.pdf
 
@@ -233,8 +234,157 @@ $$
 
 Det tilsvarende gjøres for de andre 2 kompnentene(er helt likt, så jeg tar bare for én komponent for ikke å trenge å skrive så mye)
 
+\textbf{Oppgave 3)}
+
+\textbf{a)}
+
+$$
+\textbf{v} = y\hat{i} - x\hat{j} - (z-x)\hat{k}
+$$
+
+For å regne ut $\int \int_A \textbf{v} \cdot \textbf{n} dA$ enklere, regner vi det ut for hver flate av kuben og legger det sammen. For å få dette oversiktelig setter vi opp en tabell for flatene:
+
+\begin{table}[h!]
+  \centering
+
+  \label{tab:table1}
+  \begin{tabular}{c|c|c|c|c|c}
+    flate & $f$ for flaten & $ \textbf{n} $ & $d\sigma$ & $\textbf{v} \times \textbf{n}$\\
+    \hline
+    1 & y=0 & $ -\hat j $ & dx dz & -x \\
+    \hline
+    2 & x=0 & $ -\hat i $ & dy dz & -y \\
+    \hline
+    3 & z=1 & $ \hat k $ & dx dy & 1-x \\
+    \hline
+    4 & y=1 & $ \hat j $ & dx dz & x \\
+    \hline
+    5 & x=1 & $ \hat i $ & dy dz & y \\
+    \hline
+    5 & z=0 & $ -\hat k $ & dx dy & x 
+  \end{tabular}
+\end{table}
 
 
+Vi kan se med den gang at flate 1 er det motsatte av flate 4, og derfor vil bli 0 når de blir lagt sammen. Det samme gjelder flate 2 og 5. Så det vi sitter igjen med er:
+
+$$
+Q = \int \int_A \textbf{v} \cdot \textbf{n} dA =\int_0 ^{1} \int_0 ^{1}[(1-x) + x]dxdy = \int_0 ^{1} \int_0 ^{1} dxdy = 1
+$$\\
+
+\textbf{b)}
+
+Gauss' teorem sier at 
+
+$$
+\int_A \textbf{v} \cdot \textbf{n} = \int_V \nabla \cdot \textbf{v} d\tau
+$$
+
+Her er $\nabla \cdot \textbf{v} = 1$, så
+
+$$
+Q = \int_V \nabla \cdot \textbf{v} d\tau = \int_0 ^{1} \int_0 ^{1} \int_0 ^{1} 1 dxdydz = 1
+$$
+
+Som forventet er samme svar som i \textbf{a)}
+
+
+\textbf{Oppgave 4)}
+
+$$
+\textbf{w}(x,y,z) = (2x -y)\hat{i} + y^{2}\hat{j} + y^{2}z\hat{k}
+$$
+
+\textbf{a)}
+
+$$
+\nabla \cdot \textbf{w} = 2 - 2y - y^{2}
+$$
+
+\textbf{b)}
+
+$$
+\nabla \times \textbf{w} 
+=\begin{vmatrix}
+\hat i & \hat j & \hat k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+(2x -y) & y^{2} & y^{2}z
+\end{vmatrix}
+= \hat{i}(-2yz) + \hat{k}
+$$
+
+
+\textbf{c)}
+
+Kurven til en sirkel med radius 1 som ligger i $z = 1$ er
+
+$$
+\bm{\Gamma } = \cos(t)\hat{i} + \sin(t)\hat{j} + 1\hat{k}
+$$
+
+Vi kan så derivere dette med hensyn på t
+
+$$
+\frac{\partial \bm{\Gamma}}{\partial t} = -\sin(t) \hat i + \cos(t) \hat j
+$$
+
+$$
+\Rightarrow d\bm{\Gamma} =  (-\sin(t) \hat i + \cos(t) \hat j)dt
+$$
+
+\textbf{d)}
+
+$$
+C = \oint_{\bm{\Gamma}} \bm{W}(\bm{\Gamma}) \cdot d\bm{\Gamma}
+$$
+
+Først må vi finne $\bm{w}(\bm{\Gamma})$ og $\bm{W}(\bm{\Gamma}) \cdot d\bm{\Gamma}$
+
+$$
+\bm{w}(\bm{\Gamma}) = (2\cos(t) - \sin(t))\hat{i} - \sin^{2}(t)\hat{j} - \sin^{2}(t)\hat{k}
+$$
+
+$$
+\bm{w}(\bm{\Gamma}) \cdot d\bm{\Gamma} = ((2\cos(t) - \sin(t))\hat{i} - \sin^{2}(t)\hat{j} - \sin^{2}(t)\hat{k}) \cdot (-\sin(t) \hat i + \cos(t) \hat j)
+$$
+
+$$
+= 2\cos(t)\sin(t) + \sin^{2}(t) - \cos(t)\sin^{2}(t)
+$$
+
+Da får vi
+
+$$
+C = \int_0^{2\pi} (2\cos(t)\sin(t) + \sin^{2}(t) - \cos(t)\sin^{2}(t)) dt
+$$
+
+$$
+= \left[\sin^{2}(t) + \frac{1}{2}(t-\sin(t)\cos(t)) - \frac{1}{3}sin^{3}(t)\right]_0^{2\pi}
+$$
+
+$$
+= \pi
+$$
+
+\textbf{e)}
+
+Stokes' teorem sier at
+
+$$
+\oint_{\bm{\Gamma}} \bm{w}(\bm{\Gamma}) \cdot d\bm{\Gamma} = \int_A \nabla \times \textbf{w} d\sigma
+$$
+
+Vi har at virvlingen er $ \nabla \times \textbf{w} = \hat{i}(-2yz) + \hat{k}$ , og $\textbf{n} = \hat{k}$(siden normalvektoren på en sirkel i xy-planet er $\hat{k}$). Da får vi
+
+$$
+C = \int_A \nabla \times \textbf{w} d\sigma = \int_0^{1} \int_0^{2\pi}(\hat{i}(-2yz) + \hat{k})\cdot \hat{k} rd\theta dr 
+$$
+
+$$
+= \int_0^{1} \int_0^{2\pi} rd\theta dr = 2\pi \int_0^{1} r dr = \frac{1}{2}2\pi = \pi
+$$
+
+Som er akkurat samme svar som i \textbf{d)}.
 
 
 
